@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SIAAS_UIRefresh_Regression" verbose="3" parallel="methods">
+	<parameter name="deviceHost" value="localhost" />
+	<parameter name="devicePort" value="4444" />
+	<parameter name="browserName" value="chrome_windows"></parameter>
+	<parameter name="browser" value= ${Browser}></parameter>
+	<parameter name="browser_version" value="70"></parameter>
+	<parameter name="os" value="Windows"></parameter>
+	<parameter name="os_version" value="10"></parameter>
+	<parameter name="env" value="SystemTest"></parameter>
+
+	<parameter name="webSite" value=${ECURL}></parameter>
+
+	<parameter name="website_UIRefresh" value=${UIRefreshURL}></parameter>
+
+	<parameter name="webSite_WJ" value= ${WJURL}></parameter>
+	
+	<parameter name="webSite_SS" value= ${SSURL}></parameter>
+	
+	<parameter name="soapenv"
+		value="http://aldvmweb01.siriusfs.com/CoreSIT/TechnologyFrameworksWeb/ListServices.jsp"></parameter>
+
+	<test name="UIRefresh_Smoke" parallel="true" thread-count= ${Thread} >
+		<classes>
+			<class name="com.ssp.UIRefresh.Regression.UIRefreshRunner">
+			</class>
+		</classes>
+		
+	</test>
+	
+		<test name="WJTest" parallel="true" thread-count=${Thread}>
+		<classes>
+			<class name="com.ssp.uxp.WJ_Test.WJTestRunner">
+			</class>
+		</classes>
+	</test>
+
+	<test name="CancelDateFeature" parallel="true" thread-count=${Thread}>
+		<classes>
+			<class name="com.ssp.EC.cancelDate_Feature.cancelDateRunner">
+			</class>
+		</classes>
+	</test>
+
+	<test name="GDPR_RTE" parallel="true" thread-count=${Thread}>
+		<classes>
+			<class name="com.ssp.UIRefresh.GDPR_RTE_feature.gdprRTErunner">
+			</class>
+		</classes>
+	</test>
+	
+</suite>

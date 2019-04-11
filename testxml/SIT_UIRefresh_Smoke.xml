@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SIAAS_UIRefresh_Regression" verbose="3" parallel="tests">
+	<parameter name="deviceHost" value="localhost" />
+	<parameter name="devicePort" value="4444" />
+	<parameter name="browserName" value="chrome_windows"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="browser_version" value="71"></parameter>
+	<parameter name="os" value="Windows"></parameter>
+	<parameter name="os_version" value="10"></parameter>
+	<parameter name="env" value="SystemTest"></parameter>
+
+	<parameter name="website_EC"
+		value="http://aldvmweb01.siriusfs.com/EngagementCentreCoreSIT/servletcontroller"></parameter>
+
+	<parameter name="website_UIRefresh"
+		value="http://aldvmweb01.siriusfs.com/CoreSIT/UI/SSP/index.htm"></parameter>
+
+	
+	<test name="UIRefresh_Regression" parallel="true" thread-count="3">
+		<classes>
+			<class name="com.ssp.UIRefresh.Regression.UIRefreshRunner">
+			</class>
+		</classes>
+	</test>
+	
+</suite>

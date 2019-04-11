@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SIAAS_Regression" verbose="3" parallel="methods">
+	<suite-files>
+
+		<suite-file path="UXP_WJ_Smoke_Cucumber.xml">
+		</suite-file>
+
+		<suite-file path="UIRefresh_Smoke.xml">
+		</suite-file>
+
+		<suite-file path="UXP_SS.xml">
+		</suite-file>
+
+	</suite-files>
+</suite>
